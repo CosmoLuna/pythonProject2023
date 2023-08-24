@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Course books page
+{% endblock %}
+
+{% block content %}
+    <h1>This is page with books to study</h1>
+    <p>Books, pics and links</p>
+<div class="block">
+    {% for book in books %}
+    <div class="element">
+        <div><img src="{{ book.image.url }}" alt=""></div>
+        <div class="text">
+            <h2>{{ book.title }}</h2>
+            <p>{{ book.description }}</p>
+            <a href="{{ book.url }}" target="_blank"><p>More</p></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

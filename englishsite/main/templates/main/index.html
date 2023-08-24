@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
 Main page
 {% endblock %}
@@ -7,4 +7,7 @@ Main page
 {% block content %}
     <h1>Main page</h1>
     <p>Just text</p>
+    <div class="img">
+        <img src="{% static 'images/coding_cat.jpeg' %}" alt="">
+    </div>
 {% endblock %}

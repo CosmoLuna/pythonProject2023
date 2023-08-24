@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Resources page
+{% endblock %}
+
+{% block content %}
+    <h1>This is page for resources</h1>
+    <p>Course books, books to read, games</p>
+    <a href="{% url 'c_books' %}">Course books</a>
+    <a href="{% url 'r_books' %}">Books to read</a>
+    <a href="{% url 'games' %}">Games</a>
+{% endblock %}

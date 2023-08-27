@@ -34,3 +34,11 @@ def games(request):
 
 def dialogues(request):
     return render(request, 'main/dialogues.html')
+
+
+def terms(request):
+    return render(request, 'main/terms.html')
+
+
+def vocabulary(request):
+    return render(request, 'main/vocabulary.html')

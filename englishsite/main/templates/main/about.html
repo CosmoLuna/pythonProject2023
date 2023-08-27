@@ -1,10 +1,43 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
-About up page
+About us
 {% endblock %}
 
+
+
 {% block content %}
-    <h1>This is page about us</h1>
-    <p>Just text about us</p>
+
+
+<body>
+
+    <!-- потом картинку на космо поменять, пока для понимания размера добавила -->
+    <div class="about_body">
+        <img src="images/about us.jpg" alt="Cosmo" class="responsive">
+        <h1>About us</h1>
+        <div class="about_text">
+            <h2>Hello!</h2>
+            <p>I'm Cosmo the cat. I'm an English teacher and programmer.
+                I love information technology and I bet you do too.</p>
+            <p>So you are preparing for a job interview, but you may lack
+                confidence when you need to speak English, right? Maybe you’ve
+                been learning English since you were at school,
+                but you still get stuck when you speak. You need special
+                vocabulary for your studies or work in IT.</p>
+            <p>If this sounds familiar, then you're in the right place.
+                On this site, you will find a lot of resources and tools
+                that will help you improve your tech English.</p>
+            <h2>Learn With Me</h2>
+            <p>You can learn English via:</p>
+            <div class="body_but">
+                <a class="about_us2" href="learn.html">My free website resources</a>
+                <a class="about_us2" href="learn.html">My online classes</a>
+                </div>
+        </div>
+    </div>
+</body>
+
+
+
+
 {% endblock %}

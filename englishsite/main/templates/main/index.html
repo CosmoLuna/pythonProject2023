@@ -5,9 +5,50 @@ Main page
 {% endblock %}
 
 {% block content %}
-    <h1>Main page</h1>
-    <p>Just text</p>
-    <div class="img">
-        <img src="{% static 'images/coding_cat.jpeg' %}" alt="">
+
+<main>
+    <div class="main-content">
+        <div class="banner">
+            <img src="{% static 'images/main.png' %}" alt="Book" class="responsive">
+        </div>
+        <div class="learn_cards">
+            <h1>Learn</h1>
+            <div class="cards">
+                <a class="card-item" href="{% url 'vocabulary' %}">
+                    <div class="card">
+                        <img src="images/vocabulary.png" alt="vocabulary">
+                        <div class="card_teext">
+                            <h2>Vocabulary</h2>
+                            <p>You can find here many many so much needed words</p></div>
+                    </div>
+                </a>
+                <a class="card-item" href="{% url 'dialogues' %}">
+                    <div class="card">
+                        <img src="images/dialogues.png" alt="dialogues">
+                        <div class="card_teext">
+                            <h2>Dialogues</h2>
+                            <p>Listen, watch. Almost like YouTube, but better</p></div>
+                    </div>
+                </a>
+                <a class="card-item" href="texts.html">
+                    <div class="card">
+                        <img src="images/texts.png" alt="texts">
+                        <div class="card_teext">
+                            <h2>Texts</h2>
+                            <p>Read them all</p></div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
+</main>
+
+
+
+
+<!--    <h1>Main page</h1>-->
+<!--    <p>Just text</p>-->
+<!--    <div class="img">-->
+<!--        <img src="{% static 'images/coding_cat.jpeg' %}" alt="">-->
+<!--    </div>-->
 {% endblock %}

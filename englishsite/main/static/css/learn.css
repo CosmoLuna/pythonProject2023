@@ -1,0 +1,94 @@
+:root {
+    --bgcolor: #000000;
+    --bgcolordif: #292929;
+    --fontcolor: rgb(255, 255, 255);
+    --fontselect: #00FF00;
+    --fontselectdiff: #cc00e7;
+}
+
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--fontcolor);
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+/* Learn */
+.learn_body {
+    display: block;
+    margin-bottom: 40px;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+.text-text {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-text h1 {
+    color: var(--bgcolor);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 40px 20px 40px;
+}
+.text-text p {
+    color: var(--bgcolor);
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+    line-height: 150%;
+    margin: 20px 40px 20px 40px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bgcolordif);
+    outline: 2px solid var(--fontselect);
+    margin: 0px 20px;
+    width: 300px;
+    height: auto;
+}
+.card-item {text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;}
+.card h2 {
+    color: var(--fontselect);
+    padding: 20px;
+    text-align: center;
+}
+.card p {
+    padding: 0 20px 20px 20px;
+    text-align: center;
+    line-height: 150%;
+}
+
+/* Адаптивность */
+
+@media (max-width: 1080px) {
+    .cards {display: block;}
+    .card {display: flex; flex-direction: row; width: 80%; justify-content: start;}
+    .card img {width: 50%; max-width: 300px;}
+    .card-item {margin-bottom: 20px;}
+    .card h2, .card p {text-align: left;}
+}
+
+@media (max-width: 650px) {
+    .contact_f, .legal_f {display: flex; flex-direction: column;}
+    .legal_f {text-align: center; }
+    .foot_legdiv {padding-bottom: 10px;}
+    .card {display: flex; flex-direction: column; width: 300px; height: auto;}
+    .card img {width: 100%;}
+}

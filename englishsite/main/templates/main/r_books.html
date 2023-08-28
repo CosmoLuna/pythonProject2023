@@ -1,10 +1,45 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
-Books to read page
+Books to read
 {% endblock %}
 
 {% block content %}
-    <h1>This is page with books in English on programming, coding and IT</h1>
-    <p>books to read</p>
+
+
+<div class="body_books">
+    <img src="{% static 'images/rbtitle.png' %}" alt="Books" class="responsive">
+    <div class="text-text">
+        <h1>Books to read</h1>
+        <p>I provide links to useful books that will allow you to delve even deeper into learning English for
+            programming.
+            These books cover various topics, ranging from basic programming concepts to advanced techniques and
+            algorithms.</p>
+    </div>
+
+
+    <div class="book2">
+        {% for rbook in rbooks %}
+        <div class="onebook">
+            <img src="{{ rbook.image.url }}" alt="обложка">
+            <div class="preview">
+                <h4>{{ rbook.title }}</h4>
+                <p class="location">{{ rbook.author }}</p>
+                <p class="description2">{{ rbook.description|truncatechars:60 }}</p>
+            </div>
+            <div class="info">
+                <h4>{{ rbook.title }}</h4>
+                <p class="location">{{ rbook.author }}</p>
+                <p class="description2">
+                    {{ rbook.description }}</p>
+                <div class="book_but2">
+                    <a href="{{ rbook.url }}" target="_blank">Buy now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</div>
 {% endblock %}

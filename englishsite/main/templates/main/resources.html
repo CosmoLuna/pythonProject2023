@@ -1,13 +1,47 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
-Resources page
+Resources
 {% endblock %}
 
 {% block content %}
-    <h1>This is page for resources</h1>
-    <p>Course books, books to read, games</p>
-    <a href="{% url 'c_books' %}">Course books</a>
-    <a href="{% url 'r_books' %}">Books to read</a>
-    <a href="{% url 'games' %}">Games</a>
+
+<div class="res_body">
+    <img src="{% static 'images/res.png' %}" alt="Book" class="responsive">
+    <div class="text-text">
+        <h1>Resources</h1>
+        <p>This website cares about both beginner programmers and those who already have some programming experience.
+            I have created a user-friendly platform where you can learn English for programming at your own
+            pace and effectively combine these two important fields.</p>
+            <p>Here you will find books and games to improve your skills.</p>
+    </div>
+    <div class="learn_cards">
+        <div class="cards">
+            <a class="card-item" href="{% url 'c_books' %}">
+                <div class="card">
+                    <img src="{% static 'images/cbooks.png' %}" alt="course books">
+                    <div class="card_teext">
+                        <h2>Course books</h2>
+                        <p>Carefuly selected course books for independent learners</p></div>
+                </div>
+            </a>
+            <a class="card-item" href="{% url 'r_books' %}">
+                <div class="card">
+                    <img src="{% static 'images/rbooks.png' %}" alt="books to read">
+                    <div class="card_teext">
+                        <h2>Books to read</h2>
+                        <p>Books in English for entertainment and delving deeper in programming</p></div>
+                </div>
+            </a>
+            <a class="card-item" href="{% url 'games' %}">
+                <div class="card">
+                    <img src="{% static 'images/games.png' %}" alt="games">
+                    <div class="card_teext">
+                        <h2>Games</h2>
+                        <p>Learn and play! Double pleasure, yes</p></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}

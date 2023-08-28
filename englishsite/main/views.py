@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Tiles
+from .models import RBooks
 
 
 def index(request):
@@ -25,7 +26,8 @@ def c_books(request):
 
 
 def r_books(request):
-    return render(request, 'main/r_books.html')
+    rbooks = RBooks.objects.all()
+    return render(request, 'main/r_books.html', {'rbooks': rbooks})
 
 
 def games(request):
@@ -42,3 +44,11 @@ def terms(request):
 
 def vocabulary(request):
     return render(request, 'main/vocabulary.html')
+
+
+def classes(request):
+    return render(request, 'main/classes.html')
+
+
+def texts(request):
+    return render(request, 'main/texts.html')

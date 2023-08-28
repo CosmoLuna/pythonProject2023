@@ -1,22 +1,55 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block title %}
 Course books page
 {% endblock %}
 
 {% block content %}
-    <h1>This is page with books to study</h1>
-    <p>Books, pics and links</p>
-<div class="block">
-    {% for book in books %}
-    <div class="element">
-        <div><img src="{{ book.image.url }}" alt=""></div>
-        <div class="text">
-            <h2>{{ book.title }}</h2>
-            <p>{{ book.description }}</p>
-            <a href="{{ book.url }}" target="_blank"><p>More</p></a>
-        </div>
+
+
+<div class="body_books">
+    <img src="{% static 'images/cbtitle.png' %}" alt="Books" class="responsive">
+    <div class="text-text">
+        <h1>Course books</h1>
+        <p>Here you will find links to course books to study on your own or with a teacher.</p>
     </div>
-    {% endfor %}
+    <div class="books_all">
+        {% for book in books %}
+        <div class="books_card">
+            <div class="book_image">
+                <img src="{{ book.image.url }}" alt="book cover">
+                <div class="book_but">
+                    <a href="{{ book.url }}" target="_blank">Buy now</a>
+                </div>
+            </div>
+            <div class="book_text">
+                <h2>{{ book.title }}</h2>
+<!--                <p class="Author">J.Doe</p>-->
+                <p class="Description">{{ book.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+
+
+
+
+<!--    <p>Here you will find links to course books to study on your own or with a teacher.</p>-->
+<!--<div class="block">-->
+<!--    {% for book in books %}-->
+<!--    <div class="element">-->
+<!--        <div><img src="{{ book.image.url }}" alt=""></div>-->
+<!--        <div class="text">-->
+<!--            <h2>{{ book.title }}</h2>-->
+<!--            <p>{{ book.description }}</p>-->
+<!--            <a href="{{ book.url }}" target="_blank"><p>More</p></a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+
 
 {% endblock %}

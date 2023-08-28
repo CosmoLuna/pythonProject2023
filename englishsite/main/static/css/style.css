@@ -147,7 +147,10 @@ nav {
   height: auto;
   justify-content: center;
 }
-.learn_cards {display: block; margin-bottom: 40px;}
+.learn_cards {
+  display: block;
+  margin-bottom: 40px;
+}
 .learn_cards h1 {
   font-size: 32px;
   margin-top: 40px;
@@ -218,8 +221,23 @@ footer {
 .text_f {
   display: block;
   max-width: 50%;
-  margin: 20px 20px;
+  margin: 20px 20px 40px 20px;
 }
+
+.text_f_cl{
+  display: block;
+  max-width: 30%;
+  margin: 20px 20px 40px 20px;
+}
+.text_f_cl p{
+color: var(--bgcolor);
+padding-bottom: 10px;
+}
+.text_f_cl h2{
+padding-bottom: 40px;
+color: var(--fontselect);
+}
+
 .text_f h2 {color: var(--fontselect); padding-bottom: 10px;}
 .text_f p  {padding-bottom: 10px;}
 .form {

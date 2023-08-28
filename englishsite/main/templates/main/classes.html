@@ -2,17 +2,14 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/learn.css' %}">
-    <link rel="stylesheet" href="{% static 'css/r_books.css' %}">
-    <link rel="stylesheet" href="{% static 'css/resources.css' %}">
     <link rel="stylesheet" href="{% static 'css/terms.css' %}">
     <link rel="icon" href="{% static 'images/Frame.png' %}" type="image/png">
-    <title>{% block title %}{% endblock %}</title>
+  <title>Online classes</title>
 </head>
 <body>
 
@@ -26,7 +23,7 @@
             <nav>
                 <a class="nav-item" href="{% url 'home' %}">Home</a>
                 <a class="nav-item" href="{% url 'about' %}">About us</a>
-                <div id="nav-dropdown" href="{% url 'resources' %}">
+                <div id="nav-dropdown" href="resources.html">
                     <a class="nav-item" href="{% url 'resources' %}">Resources</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'c_books' %}">Course books</a>
@@ -39,7 +36,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'vocabulary' %}">Vocabulary</a>
                         <a class="dropdown-item" href="{% url 'dialogues' %}">Dialogues</a>
-                        <a class="dropdown-item" href="{% url 'texts' %}">Texts</a>
+                        <a class="dropdown-item" href="texts.html">Texts</a>
                     </div>
                 </div>
                 <a class="nav-item" href="{% url 'classes' %}">Online classes</a>
@@ -64,33 +61,42 @@
     </div>
 </header>
 
-<div class="container">
-    {% block content %}
-    {% endblock %}
+
+<div class="about_body">
+    <img src="{% static 'images/classes.png' %}" alt="Cosmo" class="responsive">
+    <div class="about_text">
+        <h2> Start learning today!</h2>
+        <p>Have questions? Or feel that you need some help?</p>
+        <p>You can start online classes with a teacher.</p>
+    </div>
 </div>
+
+
+<div class="contact_f">
+    <div class="text_f_cl">
+        <h2>Text me</h2>
+        <p>Just send me a message and I answer as soon as possible.</p>
+        <p>And yes, I can speak human too!</p>
+    </div>
+    <form method="get" class="register">
+        <div class="form">
+            <div class="form_sbm">
+                <input type="name" placeholder="name">
+            </div>
+            <div class="form_sbm">
+                <input type="name" placeholder="phone">
+            </div>
+            <div class="btn">
+                <input type="button" value="send a message">
+            </div>
+        </div>
+    </form>
+</div>
+
+
 
 <footer>
     <div class="footer-all">
-        <div class="contact_f">
-            <div class="text_f">
-                <h2>Want to know more?</h2>
-                <p>Just send me a message and I answer as soon as possible.</p>
-                <p>And yes, I can speak human too. Start learning today!</p>
-            </div>
-            <form method="get" class="register">
-                <div class="form">
-                    <div class="form_sbm">
-                        <input type="name" placeholder="name">
-                    </div>
-                    <div class="form_sbm">
-                        <input type="name" placeholder="phone">
-                    </div>
-                    <div class="btn">
-                        <input type="button" value="send a message">
-                    </div>
-                </div>
-            </form>
-        </div>
         <div class="legal_f">
             <div class="foot_legdiv">
                 <a class="footer_legal" href="{% url 'terms' %}">Terms & conditions</a></div>
@@ -107,3 +113,12 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+

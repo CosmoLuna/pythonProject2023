@@ -12,4 +12,6 @@ urlpatterns = [
     path('learn/dialogues', views.dialogues, name='dialogues'),
     path('learn/vocabulary', views.vocabulary, name='vocabulary'),
     path('terms-and-conditions', views.terms, name='terms'),
+    path('online-classes', views.classes, name='classes'),
+    path('learn-texts', views.texts, name='texts'),
 ]

@@ -49,7 +49,7 @@
     padding-top: 20px;
     margin: 0 20px;
 }
-.about_text p {
+.about_text p, .about_text p strong{
     color: var(--bgcolor);
     font-size: 18px;
     text-align: center;

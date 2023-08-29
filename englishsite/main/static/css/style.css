@@ -101,7 +101,9 @@ nav {
   display: none;
 }
 .nav_brg img {height: 40px;}
-
+.nav_brg:hover{
+cursor: pointer;
+}
 
 .dropdown_menu {
   display: none;
@@ -217,17 +219,18 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px 40px;
+  margin-bottom: 60px;
 }
 .text_f {
   display: block;
   max-width: 50%;
-  margin: 20px 20px 40px 20px;
+  margin: 20px 20px 60px 20px;
 }
 
 .text_f_cl{
   display: block;
   max-width: 30%;
-  margin: 20px 20px 40px 20px;
+  margin: 20px 20px 60px 20px;
 }
 .text_f_cl p{
 color: var(--bgcolor);
@@ -240,11 +243,12 @@ color: var(--fontselect);
 
 .text_f h2 {color: var(--fontselect); padding-bottom: 10px;}
 .text_f p  {padding-bottom: 10px;}
+
 .form {
   display: block;
   margin: 20px 20px;
 }
-.form input {
+.form input, .form textarea{
   padding: 10px 10px;
   margin-bottom:  10px;
   background-color: var(--bgcolordif);

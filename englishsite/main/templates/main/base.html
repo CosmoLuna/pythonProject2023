@@ -77,13 +77,16 @@
                 <p>Just send me a message and I answer as soon as possible.</p>
                 <p>And yes, I can speak human too. Start learning today!</p>
             </div>
-            <form method="get" class="register">
+            <form action="{% url 'classes' %}" method="POST" class="register">
                 <div class="form">
                     <div class="form_sbm">
-                        <input type="name" placeholder="name">
+                        <input type="text" placeholder="Your name">
                     </div>
                     <div class="form_sbm">
-                        <input type="name" placeholder="phone">
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Your message"></textarea>
                     </div>
                     <div class="btn">
                         <input type="button" value="send a message">

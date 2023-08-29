@@ -23,9 +23,9 @@ Books to read
         <div class="onebook">
             <img src="{{ rbook.image.url }}" alt="обложка">
             <div class="preview">
-                <h4>{{ rbook.title }}</h4>
+                <h4>{{ rbook.title|truncatechars:20 }}</h4>
                 <p class="location">{{ rbook.author }}</p>
-                <p class="description2">{{ rbook.description|truncatechars:60 }}</p>
+                <p class="description2">{{ rbook.description|truncatechars:50 }}</p>
             </div>
             <div class="info">
                 <h4>{{ rbook.title }}</h4>
@@ -33,7 +33,7 @@ Books to read
                 <p class="description2">
                     {{ rbook.description }}</p>
                 <div class="book_but2">
-                    <a href="{{ rbook.url }}" target="_blank">Buy now</a>
+                    <a href="{{ rbook.url }}" target="_blank">More</a>
                 </div>
             </div>
         </div>

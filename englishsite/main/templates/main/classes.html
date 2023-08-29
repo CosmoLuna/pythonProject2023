@@ -74,20 +74,25 @@
 
 <div class="contact_f">
     <div class="text_f_cl">
-        <h2>Text me</h2>
+        <h2>Get in touch</h2>
         <p>Just send me a message and I answer as soon as possible.</p>
         <p>And yes, I can speak human too!</p>
     </div>
-    <form method="get" class="register">
+    <form action="{% url 'classes' %}" method="POST" class="register">
+        {% csrf_token %}
         <div class="form">
             <div class="form_sbm">
-                <input type="name" placeholder="name">
+                <input type="text" name="message-name" placeholder="Your name">
             </div>
             <div class="form_sbm">
-                <input type="name" placeholder="phone">
+                <input type="email" name="message-email" placeholder="Your email">
+            </div>
+            <div>
+                <textarea name="message" placeholder="Your message"></textarea>
             </div>
             <div class="btn">
-                <input type="button" value="send a message">
+                <input type="submit" value="send a message">
+<!--                <input type="button" value="">-->
             </div>
         </div>
     </form>

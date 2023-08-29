@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Tiles
 from .models import RBooks
 
+from django.core.mail import send_mail
+from django.conf import settings
 
 def index(request):
     return render(request, 'main/index.html')
@@ -47,8 +49,25 @@ def vocabulary(request):
 
 
 def classes(request):
+    # if request.method == "POST":
+    #     message_name = request.POST['message-name']
+    #     message_email = request.POST['message-email']
+    #     message = request.POST['message']
+    #
+    #     send_mail(
+    #         'Online classes',
+    #         message,
+    #         message_email,
+    #         ['my@gmail.com'],
+    #         fail_silently=False
+    #     )
+    #
+    #     return render(request, 'main/classes.html')
+    # else:
+    #     return render(request, 'main/classes.html')
     return render(request, 'main/classes.html')
 
 
 def texts(request):
     return render(request, 'main/texts.html')
+

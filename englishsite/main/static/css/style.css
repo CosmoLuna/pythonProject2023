@@ -191,6 +191,29 @@ cursor: pointer;
   line-height: 150%;
 }
 
+.dialogue-body{
+    display: block;
+    margin: 50px 300px;
+}
+.dialogue-body p{
+color: black;
+margin-bottom: 20px;
+}
+.dialogue-body h2{
+color: black;
+margin-bottom: 40px;
+text-align: center;
+}
+
+.dialogue-words{
+margin-top: 100px;
+}
+
+.dialogue-words p{
+margin-bottom: 20px;
+}
+
+
 /* Footer */
 footer {
   background-color: var(--bgcolor);
@@ -264,6 +287,7 @@ color: var(--fontselect);
   padding: 10px 10px;
   width: 100%;
 }
+
 
 
 /* Адаптивность */

@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Tiles
-from .models import RBooks
+from .models import Tiles, RBooks, Game, Dialogue
 
 from django.core.mail import send_mail
 from django.conf import settings
+
 
 def index(request):
     return render(request, 'main/index.html')
@@ -33,11 +33,13 @@ def r_books(request):
 
 
 def games(request):
-    return render(request, 'main/games.html')
+    games = Game.objects.all()
+    return render(request, 'main/games.html', {'games': games})
 
 
 def dialogues(request):
-    return render(request, 'main/dialogues.html')
+    dialogues = Dialogue.objects.all()
+    return render(request, 'main/dialogues.html', {'dialogues': dialogues})
 
 
 def terms(request):
@@ -71,3 +73,15 @@ def classes(request):
 def texts(request):
     return render(request, 'main/texts.html')
 
+
+def show_dialogue(request, dialogue_id):
+    # return HttpResponse(f"Отображение диалога с id = {dialogue_id}")
+
+    dialogue = get_object_or_404(Dialogue, pk=dialogue_id)
+
+    context = {
+        'dialogue': dialogue,
+        'title': dialogue.title,
+    }
+
+    return render(request, 'main/dialogue.html', context=context)

@@ -5,6 +5,31 @@ Games
 {% endblock %}
 
 {% block content %}
-    <h1>This is page with games</h1>
-    <p>Links to games on IT</p>
+
+
+<div class="body_books">
+    <img src="{% static 'images/gamestitle.png' %}" alt="Games" class="responsive">
+    <div class="text-text">
+        <h1>Games</h1>
+        <p>Games description</p>
+    </div>
+    <div class="books_all">
+        {% for game in games %}
+        <div class="books_card">
+            <div class="game_image">
+                <img src="{{ game.image.url }}" alt="prtsc">
+                <div class="book_but">
+                    <a href="{{ game.url }}" target="_blank">More</a>
+                </div>
+            </div>
+            <div class="book_text">
+                <h2>{{ game.title }}</h2>
+                <p class="Description">{{ game.description }}<br><br>Languages: {{ game.language }}</p>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

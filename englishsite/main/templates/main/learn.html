@@ -1,11 +1,43 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
-Learning page
+Learn
 {% endblock %}
 
 {% block content %}
-    <h1>This is page for learning</h1>
-    <p>Vocabulary, dialogues, texts</p>
-    <a href="{% url 'dialogues' %}">Dialogues</a>
+
+<div class="res_body">
+    <img src="{% static 'images/learntitle.png' %}" alt="Book" class="responsive">
+    <div class="text-text">
+        <h1>Learn with me</h1>
+        <p>Improve your listening, reading, and writing skills using relevant topics and examples from the IT world</p>
+    </div>
+    <div class="cards">
+        <a class="card-item" href="{% url 'vocabulary' %}">
+            <div class="card">
+                <img src="{% static 'images/voc.png' %}" alt="vocabulary">
+                <div class="card_teext">
+                    <h2>Vocabulary</h2>
+                    <p>Technical terms and common words for IT</p>
+                </div>
+            </div>
+        </a>
+        <a class="card-item" href="{% url 'dialogues' %}">
+            <div class="card">
+                <img src="{% static 'images/dial.png' %}" alt="dialogues">
+                <div class="card_teext">
+                    <h2>Dialogues</h2>
+                    <p>Read, learn, talk</p></div>
+            </div>
+        </a>
+        <a class="card-item" href="{% url 'texts' %}">
+            <div class="card">
+                <img src="{% static 'images/texts.png' %}" alt="texts">
+                <div class="card_teext">
+                    <h2>Texts</h2>
+                    <p>Educational texts and articles</p></div>
+            </div>
+        </a>
+    </div>
+</div>
 {% endblock %}

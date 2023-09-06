@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Dialogues
+{% endblock %}
+
+{% block content %}
+<div class="dialogue-body">
+
+    <h2>{{dialogue.id}}. {{dialogue.title}}</h2>
+    <p>{{dialogue.content|linebreaks}}</p>
+
+    <div class="dialogue-words">
+        <h2>Useful words and expressions</h2>
+    <p>{{dialogue.words|linebreaks}}</p>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -13,5 +13,6 @@ urlpatterns = [
     path('learn/vocabulary', views.vocabulary, name='vocabulary'),
     path('terms-and-conditions', views.terms, name='terms'),
     path('online-classes', views.classes, name='classes'),
-    path('learn-texts', views.texts, name='texts'),
+    path('learn/texts', views.texts, name='texts'),
+    path('learn/dialogues/<int:dialogue_id>', views.show_dialogue, name='dialogue'),
 ]

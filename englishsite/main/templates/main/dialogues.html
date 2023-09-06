@@ -1,10 +1,23 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %}
-Dialogues page
+Dialogues
 {% endblock %}
 
 {% block content %}
-    <h1>This is page with useful dialogues</h1>
-    <p>Dialogues</p>
+
+<div class="body_books">
+    <img src="{% static 'images/dialtitle.png' %}" alt="Dialogues" class="responsive">
+    <div class="text-text">
+        <h1>Dialogues</h1>
+        <p>Dialogues list</p>
+    </div>
+    <ol class="list-dialogues">
+        {% for d in dialogues %}
+        <li><h2><a href="{% url 'dialogue' d.pk %}">{{d.title}}</a></h2>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+
 {% endblock %}

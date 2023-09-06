@@ -1,20 +1,3 @@
-:root {
-    --bgcolor: #000000;
-    --bgcolordif: #292929;
-    --fontcolor: rgb(255, 255, 255);
-    --fontselect: #00FF00;
-    --fontselectdiff: #cc00e7;
-}
-
-/* GLOBAL */
-* {
-    margin: 0;
-    padding: 0;
-    color: var(--fontcolor);
-    font-family: Arial;
-    box-sizing: border-box;
-}
-
 /* Learn */
 .learn_body {
     display: block;

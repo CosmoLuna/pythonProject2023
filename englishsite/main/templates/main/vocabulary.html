@@ -5,6 +5,19 @@ Vocabulary
 {% endblock %}
 
 {% block content %}
-    <h1>This is page with vocabulary</h1>
-    <p>Learn the words</p>
+
+<div class="body_books">
+    <img src="{% static 'images/dialtitle.png' %}" alt="Vocabulary" class="responsive">
+    <div class="text-text">
+        <h1>Vocabulary</h1>
+        <p>Vocabulary topics</p>
+    </div>
+    <ol class="list-dialogues">
+        {% for v in voc %}
+        <li><h2><a href="{% url 'voc' v.pk %}">{{v.title}}</a></h2>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+
 {% endblock %}

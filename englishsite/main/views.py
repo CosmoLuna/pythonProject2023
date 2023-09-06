@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Tiles, RBooks, Game, Dialogue
+from .models import *
 
 from django.core.mail import send_mail
 from django.conf import settings
@@ -47,7 +47,8 @@ def terms(request):
 
 
 def vocabulary(request):
-    return render(request, 'main/vocabulary.html')
+    voc = Voc.objects.all()
+    return render(request, 'main/vocabulary.html', {'voc': voc})
 
 
 def classes(request):
@@ -75,7 +76,6 @@ def texts(request):
 
 
 def show_dialogue(request, dialogue_id):
-    # return HttpResponse(f"Отображение диалога с id = {dialogue_id}")
 
     dialogue = get_object_or_404(Dialogue, pk=dialogue_id)
 
@@ -85,3 +85,18 @@ def show_dialogue(request, dialogue_id):
     }
 
     return render(request, 'main/dialogue.html', context=context)
+
+
+def show_voc(request, voc_id):
+
+    voc = get_object_or_404(Voc, pk=voc_id)
+    word = Word.objects.all()
+
+    context = {
+        'voc': voc,
+        'title': voc.title,
+        'word': word,
+    }
+
+    return render(request, 'main/voc.html', context=context)
+

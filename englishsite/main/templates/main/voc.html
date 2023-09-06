@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Vocabulary
+{% endblock %}
+
+{% block content %}
+<div class="dialogue-body">
+
+  <h2>{{voc.id}}. {{voc.title}}</h2>
+  <div>
+    {% for w in word %}
+    <p>{{ w.name }} {{ w.transcription }}</p>
+
+    <audio src="{{ w.pronunciation.url }}" controls></audio>
+
+    <p>{{ w.definition }}</p>
+
+    {% endfor %}
+  </div>
+
+</div>
+
+
+
+{% endblock %}

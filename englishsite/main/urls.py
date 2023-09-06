@@ -15,4 +15,5 @@ urlpatterns = [
     path('online-classes', views.classes, name='classes'),
     path('learn/texts', views.texts, name='texts'),
     path('learn/dialogues/<int:dialogue_id>', views.show_dialogue, name='dialogue'),
+    path('learn/vocabulary/<int:voc_id>', views.show_voc, name='voc'),
 ]

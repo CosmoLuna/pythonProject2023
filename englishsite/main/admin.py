@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tiles, RBooks, Game, Dialogue
+from .models import *
 
 
 class DialogueAdmin(admin.ModelAdmin):
@@ -10,3 +10,5 @@ admin.site.register(Tiles)
 admin.site.register(RBooks)
 admin.site.register(Game)
 admin.site.register(Dialogue, DialogueAdmin)
+admin.site.register(Voc)
+admin.site.register(Word)

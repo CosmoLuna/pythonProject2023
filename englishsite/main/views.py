@@ -96,6 +96,7 @@ def show_voc(request, voc_id):
         'voc': voc,
         'title': voc.title,
         'word': word,
+        'cat_selected': voc.id,
     }
 
     return render(request, 'main/voc.html', context=context)

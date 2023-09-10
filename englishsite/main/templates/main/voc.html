@@ -5,22 +5,35 @@ Vocabulary
 {% endblock %}
 
 {% block content %}
-<div class="dialogue-body">
+<div class="table-body">
+<h2>{{voc.id}}. {{voc.title}}</h2>
 
-  <h2>{{voc.id}}. {{voc.title}}</h2>
-  <div>
+  <table>
     {% for w in word %}
-    <p>{{ w.name }} {{ w.transcription }}</p>
-
-    <audio src="{{ w.pronunciation.url }}" controls></audio>
-
-    <p>{{ w.definition }}</p>
-
+    {% if w.cat_id == cat_selected %}
+        <tr>
+          <td>{{ w.name }}</td>
+          <td class="two">{{ w.transcription }}</td>
+          <td>
+            <audio id="audio_{{ w.id }}" src="{{ w.pronunciation.url }}" controls>
+            </audio>
+            <button onclick="playAudio({{ w.id }})">
+                Play
+              </button>
+          </td>
+          <td class="four">{{ w.definition }}</td>
+        </tr>
+    {% endif %}
     {% endfor %}
-  </div>
+  </table>
 
 </div>
 
 
-
 {% endblock %}
+
+<script>
+  function playAudio(audioid) {
+    var audio = document.getElementById('audio_' + audioid);
+    audio.play();
+</script>
